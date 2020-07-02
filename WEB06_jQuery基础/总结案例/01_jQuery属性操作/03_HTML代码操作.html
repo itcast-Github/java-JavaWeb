@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>属性操作_html代码</title>
+		<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+		<script>
+			/**
+			 * 需求：
+			 * 	1.点击按钮获取div中 html
+			 * 	2.点击按钮设置div中html
+			 */
+
+			/**
+			 * 方法分析
+			 * 	1.html()方法用于读取innerHTML
+			 * 	2.html(val)方法用于设置innerHTML
+			 */
+			
+			/**
+			 *代码实现 
+			 */
+			
+			$(function(){
+				//1.点击按钮获取div中 html
+				$("#btn1").click(function(){
+					var divEle = $("div").html();
+					alert(divEle);//<p>传智播客</p>
+				});
+				
+				//2.点击按钮设置div中html
+				$("#btn2").click(function(){
+					$("div").html("Java学院");//覆盖之前此位置的内容
+				});
+				
+			})
+		</script>
+	</head>
+
+	<body>
+		<div><p>传智播客</p></div>
+		<input type="button" value="获取html" id="btn1" />
+		<input type="button" value="设置html" id="btn2" />
+	</body>
+
+</html>

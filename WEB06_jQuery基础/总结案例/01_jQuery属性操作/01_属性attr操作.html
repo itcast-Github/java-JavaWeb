@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>属性操作_attr</title>
+		<script type="text/javascript" src="../../js/jquery-1.11.0.min.js" ></script>
+		<script>
+			/**
+			 * 需求：
+			 * 	1.获取图片的路径
+			 * 	2.设置图片的高度属性
+			 *  3.给图片设置多个属性(宽度和高度)
+			 *  4.移出图片的高度属性
+			 */
+			
+			/**
+			 * 方法分析：
+			 * 	1.attr(name):读(获)取属性的值
+			 *  2.attr(key,value)：设置属性值
+			 *  3.attr(properties)：同时设置多个属性
+			 *  4.removeAttr(name)：删除某个属性
+			 * 
+			 * 所有方法注意查看运行显示结果，查看其中的某个方法时，请注释其它方法，后面的案例不再说明！
+			 */
+			
+			/*
+			 * 代码实现
+			 */
+			$(function(){
+				//1.attr(name):该方法用于获取属性的值(根据属性的名称)
+				var srcEle = $("img").attr("src");
+				alert(srcEle);//输出结果为该图片的路径：../../img/1.jpg
+				
+				//2.attr(key,value):该方法用于设置属性和值
+				$("img").attr("height","800px");//设置该图片的高度属性，注意观察图片的高度变化
+				
+				//3.attr(properties)：同时设置多个属性值
+				//$("img").attr({"width":"1300px","height":"300px"});//注意观察图片发生的变化(宽高都改变)
+				
+				//4.removeAttr(name)：删除某个属性和值
+				$("img").removeAttr("width");//清除width属性后，图片变回其自身原有的大小
+				
+			});
+		</script>
+	</head>
+	<body>
+		<img src="../../img/1.jpg"  width="800px" />
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>文档处理_插入操作</title>
+		<script src="../../js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**
+			 * 需求 
+			 *  在id=edu下增加<option value="大专">大专</option> 
+			 */
+
+			/**
+			 * 方法分析：
+			 *  内部插入
+			 * 		1.append(content):内部结尾处，将B追加到A里面去
+			 *  	2.appendTo(content):内部结尾处，将A追加到B里面去
+			 *  	3.prepend(content):内部开始处，将B追加到A里面去
+			 *  	4.prependTo(content):内部开始处，将B追加到A里面去
+			 * 	外部插入
+			 *  	1.after(content):外部，将B追加到A后面
+			 * 		2.before(content):外部，将A追加到B前面
+			 * 		3.insertAfter(content):外部，将A追加到B后面
+			 * 		4.insertBefore(content)::外部，将A追加到B前面
+			 */
+
+			$(function() {
+				// 追加 option 内容大专
+				// 创建元素
+				var $newNode = $("<option value='大专'>大专</option>");
+				
+				//内部插入
+				//$("#edu").append($newNode);   // 内部结尾，将B追加到A里面去
+				//$("#edu").prepend($newNode);  // 内部开始，将B追加到A里面去
+
+				//外部插入
+				//$("option[value='本科']").after($newNode);
+				$newNode.insertBefore($("option:contains('硕士')"));
+			});
+		</script>
+
+	</head>
+
+	<body>
+		<select id="edu">
+			<option value="博士">博士</option>
+			<option value="硕士">硕士</option>
+			<option value="本科">本科</option>
+			<option value="高中">高中</option>
+		</select>
+
+	</body>
+
+</html>

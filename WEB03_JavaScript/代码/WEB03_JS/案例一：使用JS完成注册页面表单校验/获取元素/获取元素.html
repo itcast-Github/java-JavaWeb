@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>获取元素</title>
+		<script>
+			window.onload = function(){
+				//获取页面指定位置的元素
+				var uEle = document.getElementById("username");
+				//alert(uEle);
+				//获取页面指定位置的内容(值)
+				var uValue = uEle.value;
+				alert(uValue);
+			}
+		</script>
+	</head>
+	<body>
+		用户名：<input type="text" name="username" id="username"/><br />
+		密码: <input type="password" name="password" />
+	</body>
+</html>

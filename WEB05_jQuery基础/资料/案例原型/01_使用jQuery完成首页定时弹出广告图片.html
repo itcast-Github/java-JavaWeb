@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>网站首页</title>
+		<style type="text/css">
+			.top{
+				border: 1px solid red;
+				width: 32.9%;
+				height: 50px;
+				float: left;
+			}
+
+			#clear{
+				clear: both;
+			}
+			#menu{
+				border: 1px solid blue;
+				width: 99%;
+				height: 40px;
+				background-color: black;
+			}
+			#product{
+				border: 1px solid red;
+				width: 99%;
+				height: 554px;
+			}
+			#product_top{
+				border: 1px solid red;
+				width: 100%;
+				height: 50px;
+			}
+			#product_bottom{
+				border: 1px solid blue;
+				width: 100%;
+				height: 500px;
+			}
+			#product_bottom_left{
+				border: 1px solid blue;
+				width: 185px;
+				height: 497px;
+				float: left;
+			}
+			#product_bottom_right{
+				border: 1px solid blue;
+				width: 1128px;
+				height: 497px;
+				float: left;
+			}
+			#big{
+				border: 1px solid black;
+				width: 560px;
+				height: 248px;
+				float: left;
+			}
+			.small{
+				border: 1px solid black;
+				width: 184px;
+				height: 248px;
+				text-align: center;
+				float: left;
+			}
+			#bottom{
+				text-align: center;
+			}
+			#menu ul li{
+				display: inline;
+				color: white;
+				font-size: 19px;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<div>
+			<!--定义一个广告弹出图片的div-->
+			<div>
+				<img src="../img/f001a62f-a49d-4a4d-b56f-2b6908a0002c_g.jpg" width="99%" style="display: none;" id="id_ad"/>
+			</div>
+			<!--1.logo部分的div-->
+			<div>
+				<!--切分为3个小的div-->
+				<div class="top">
+					<img src="../img/logo2.png" height="47px"/>
+				</div>
+				<div class="top">
+					<img src="../img/header.png" height="47px"/>
+				</div>
+				<div class="top" style="padding-top: 15px;height: 35px;">
+					<a href="#">登录</a>
+					<a href="../案例三：使用JS对注册页面进行简单的校验/注册页面重新布局.html">注册</a>
+					<a href="#">购物车</a>
+				</div>
+			</div>
+			<!--清除浮动-->
+			<div id="clear">
+				
+			</div>
+			<!--2.导航栏部分的div-->
+			<div id="menu">
+				<ul>
+					<li >首页</li>
+					<li >电脑办公</li>
+					<li >手机数码</li>
+					<li >孕婴保健</li>
+					<li >鞋靴箱包</li>
+				</ul>
+			</div>
+			<!--3.轮播图的div-->
+			<div>
+				<img src="../img/1.jpg" width="99%" id="img1"/>
+			</div>
+			<!--4.热门商品的div-->
+			<div id="product">
+				<!--文字+图片部分的div-->
+				<div id="product_top">
+					<span style="font-size:25px ;">热门商品&nbsp;&nbsp;&nbsp;<img src="../img/title2.jpg"/></span>
+				</div>
+				<!--商品图片的div-->
+				<div id="product_bottom">
+					<!--划分左右两个div-->
+					<div id="product_bottom_left">
+						<img src="../img/big01.jpg" width="100%" height="100%"/>
+					</div>
+					<div id="product_bottom_right">
+						<div id="clear"></div>
+						<div id="big">
+							<img src="../img/middle01.jpg" width="100%" height="100%"/>
+						</div>
+						<div class="small">
+							<img src="../img/small03.jpg" width="100%" height="60%"/>
+							<p><a href="#"><font color="gray">电炖锅</font></a></p>
+							<p><font color="red">¥499</font></p>
+						</div>
+						<div class="small">
+							<img src="../img/small03.jpg" width="100%" height="60%"/>
+							<p><a href="#"><font color="gray">电炖锅</font></a></p>
+							<p><font color="red">¥499</font></p>
+						</div>
+						<div class="small">
+							<img src="../img/small03.jpg" width="100%" height="60%"/>
+							<p><a href="#"><font color="gray">电炖锅</font></a></p>
+							<p><font color="red">¥499</font></p>
+						</div>
+						<div class="small">
+							<img src="../img/small03.jpg" width="100%" height="60%"/>
+							<p><a href="#"><font color="gray">电炖锅</font></a></p>
+							<p><font color="red">¥499</font></p>
+						</div>
+						<div class="small">
+							<img src="../img/small03.jpg" width="100%" height="60%"/>
+							<p><a href="#"><font color="gray">电炖锅</font></a></p>
+							<p><font color="red">¥499</font></p>
+						</div>
+						<div class="small">
+							<img src="../img/small03.jpg" width="100%" height="60%"/>
+							<p><a href="#"><font color="gray">电炖锅</font></a></p>
+							<p><font color="red">¥499</font></p>
+						</div>
+						<div class="small">
+							<img src="../img/small03.jpg" width="100%" height="60%"/>
+							<p><a href="#"><font color="gray">电炖锅</font></a></p>
+							<p><font color="red">¥499</font></p>
+						</div>
+						<div class="small">
+							<img src="../img/small03.jpg" width="100%" height="60%"/>
+							<p><a href="#"><font color="gray">电炖锅</font></a></p>
+							<p><font color="red">¥499</font></p>
+						</div>
+						<div class="small">
+							<img src="../img/small03.jpg" width="100%" height="60%"/>
+							<p><a href="#"><font color="gray">电炖锅</font></a></p>
+							<p><font color="red">¥499</font></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--5.广告图片的div-->
+			<div id="">
+				<img src="../img/ad.jpg" width="99%" />
+			</div>
+			<!--6.热门商品的div-->
+			<div id="product">
+				<!--文字+图片部分的div-->
+				<div id="product_top">
+					<span style="font-size:25px ;">热门商品&nbsp;&nbsp;&nbsp;<img src="../img/title2.jpg"/></span>
+				</div>
+				<!--商品图片的div-->
+				<div id="product_bottom">
+					<!--划分左右两个div-->
+					<div id="product_bottom_left">
+						<img src="../img/big01.jpg" width="100%" height="100%"/>
+					</div>
+					<div id="product_bottom_right">
+						<div id="clear"></div>
+						<div id="big">
+							<img src="../img/middle01.jpg" width="100%" height="100%"/>
+						</div>
+						<div class="small">
+							<img src="../img/small03.jpg" width="100%" height="60%"/>
+							<p><a href="#"><font color="gray">电炖锅</font></a></p>
+							<p><font color="red">¥499</font></p>
+						</div>
+						<div class="small">
+							<img src="../img/small03.jpg" width="100%" height="60%"/>
+							<p><a href="#"><font color="gray">电炖锅</font></a></p>
+							<p><font color="red">¥499</font></p>
+						</div>
+						<div class="small">
+							<img src="../img/small03.jpg" width="100%" height="60%"/>
+							<p><a href="#"><font color="gray">电炖锅</font></a></p>
+							<p><font color="red">¥499</font></p>
+						</div>
+						<div class="small">
+							<img src="../img/small03.jpg" width="100%" height="60%"/>
+							<p><a href="#"><font color="gray">电炖锅</font></a></p>
+							<p><font color="red">¥499</font></p>
+						</div>
+						<div class="small">
+							<img src="../img/small03.jpg" width="100%" height="60%"/>
+							<p><a href="#"><font color="gray">电炖锅</font></a></p>
+							<p><font color="red">¥499</font></p>
+						</div>
+						<div class="small">
+							<img src="../img/small03.jpg" width="100%" height="60%"/>
+							<p><a href="#"><font color="gray">电炖锅</font></a></p>
+							<p><font color="red">¥499</font></p>
+						</div>
+						<div class="small">
+							<img src="../img/small03.jpg" width="100%" height="60%"/>
+							<p><a href="#"><font color="gray">电炖锅</font></a></p>
+							<p><font color="red">¥499</font></p>
+						</div>
+						<div class="small">
+							<img src="../img/small03.jpg" width="100%" height="60%"/>
+							<p><a href="#"><font color="gray">电炖锅</font></a></p>
+							<p><font color="red">¥499</font></p>
+						</div>
+						<div class="small">
+							<img src="../img/small03.jpg" width="100%" height="60%"/>
+							<p><a href="#"><font color="gray">电炖锅</font></a></p>
+							<p><font color="red">¥499</font></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--7.广告图片的div-->
+			<div id="">
+				<img src="../img/footer.jpg" width="99%" />
+			</div>
+			<!--8.超链接与版权信息的div-->
+			<div id="bottom">
+				<a href="#">关于我们 </a>
+				<a href="#">联系我们 </a>
+				<a href="#">招贤纳士 </a>
+				<a href="#">法律声明</a>
+				<a href="#">友情链接</a>
+				<a href="#">支付方式</a>
+				<a href="#">配送方式 </a>
+				<a href="#">服务声明 </a>
+				<a href="#">广告声明 </a>
+				<p>Copyright © 2005-2016 传智商城 版权所有 </p>
+			</div>
+			<div>
+				<a href="BOM对象学习/02_history对象.html">go</a>
+			</div>
+		</div>
+	</body>
+</html>

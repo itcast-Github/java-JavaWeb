@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>层级选择器</title>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<script type="text/javascript" src="../../js/jquery-1.8.3.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btn1").click(function(){
+					$("body div").css("background-color","gold");
+				});
+				
+				$("#btn2").click(function(){
+					$("body>div").css("background-color","gold");
+				});
+				
+				$("#btn3").click(function(){
+					$("#two+div").css("background-color","gold");
+				});
+				
+				$("#btn4").click(function(){
+					$("#one~div").css("background-color","gold");
+				});
+			});
+		</script>
+		
+		
+	</head>
+	<body>
+		<input type="button" id="btn1" value="选择body中的所有的div元素"/>
+		<input type="button" id="btn2" value="选择body中的第一级的孩子"/>
+		<input type="button" id="btn3" value="选择id为two的元素的下一个元素"/>
+		<input type="button" id="btn4" value="选择id为one的所有的兄弟元素"/>
+		
+		<hr/>
+		<div id="one">
+			<div class="mini">
+				111
+			</div>
+		</div>
+		
+		<div id="two">
+			<div class="mini">
+				222
+			</div>
+			<div class="mini">
+				333
+			</div>
+		</div>
+		
+		<div id="three">
+			<div class="mini">
+				444
+			</div>
+			<div class="mini">
+				555
+			</div>
+			<div class="mini">
+				666
+			</div>
+		</div>
+		
+		<span id="four">
+			
+		</span>
+	</body>
+</html>

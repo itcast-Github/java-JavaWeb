@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://www.example.org/web-app_2_5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/web-app_2_5 web-app_2_5.xsd"
+	version="2.5">
+
+	<servlet>
+		<servlet-name>MyServlet1</servlet-name>
+		<servlet-class>cn.itheima.web.servlet1.MyServlet1</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyServlet1</servlet-name>
+		<url-pattern>/myServlet1</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>MyServlet2</servlet-name>
+		<servlet-class>cn.itheima.web.servlet1.MyServlet2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyServlet2</servlet-name>
+		<url-pattern>/myServlet2</url-pattern>
+	</servlet-mapping>
+</web-app>

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<hello version="1" id="1" >
+	<a11111>
+		
+	</a11111>
+	<!-- 大家好！ -->
+	<a/>
+	<c>&lt;AAAA</c>
+	<b>
+		<![CDATA[
+			if(a>b&&b<c){
+			if……
+		}
+		]]>
+	</b>
+	
+</hello>

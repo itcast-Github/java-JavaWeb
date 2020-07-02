@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>删除相关操作的区别</title>
+		<script type="text/javascript" src="../../js/jquery-1.11.0.min.js" ></script>
+		<script>
+			$(function(){
+				//清空第二个li元素节点的所有后代节点(此处是文本节点橘子)，通过firebug查看html源码验证
+				//$("ul li:eq(1)").empty();
+				
+				//删除第一个li元素节点
+				$("ul li:eq(0)").remove();
+			});
+		</script>
+	</head>
+	<body>
+		<p title="选择你最喜欢的水果.">你最喜欢的水果是?</p>
+		<ul>
+			<li title='苹果'>苹果</li>
+			<li title='橘子'>橘子</li>
+			<li title='菠萝'>菠萝</li>
+		</ul>
+	</body>
+</html>

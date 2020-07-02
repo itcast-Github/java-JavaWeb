@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>属性操作_CSS类</title>
+		<style type="text/css">
+			.divclass {
+				color: red;
+			}
+			
+			.div1 {
+				background-color: yellow;
+			}
+			
+			#div1 {
+				border: 1px solid black;
+				width: 400px;
+				height: 250px;
+				margin: auto;
+			}
+			
+			#father {
+				border: 1px solid white;
+				width: 450px;
+				height: 300px;
+				margin: auto;
+				text-align: center;
+			}
+		</style>
+		<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+		<script>
+			/**
+			 * 需求：
+			 * 1.点击button，使一个div的背景颜色变为绿色
+			 * 2.点击button，使一个div的背景颜色变为绿色以及里面内容的字体颜色变成红色
+			 */
+
+			/**
+			 * 方法分析：
+			 *  1.css(name, value) 设置一个CSS样式属性
+			 *  2.css(properties) 传递key - value对象， 设置多个CSS样式属性
+			 */
+
+			/**
+			 * CSS操作方法汇总：
+			 * 1.通过attr属性设置 / 获取 style属性
+			 * 	attr('style', 'color:red'); // 添加style属性
+			 * 2.设置CSS样式属性
+			 * 	css(name, value) 设置一个CSS样式属性
+			 * 	css(properties) 传递key - value对象， 设置多个CSS样式属性		
+			 * 3.设置class属性
+			 * 	addClass(class) 添加一个class属性
+			 * 	removeClass([class]) 移除一个class属性
+			 * 	toggleClass(class) 如果存在(不存在)就删除(添加) 一个类
+			 */
+	
+			/**
+			 *代码实现 
+			 */
+			$(function() {
+				// 1.点击button，使一个div的背景颜色变为绿色
+				//方式一
+				/*$("#button1").click(function() {
+					$("#div1").css("background-color","green");
+				});*/
+				
+				//方式二：
+				$("#button1").click(function() {
+					$("#div1").attr("style","background-color:green");
+				});
+
+				// 2.点击button，使一个div的背景颜色变为绿色，内容字体颜色变成红色
+				$("#button2").click(function() {
+					$("#div1").css({"background-color":"green","color":"red"});
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="father">
+			<div id="div1">AAAAAA</div><br />
+			<input type="button" value="背景颜色变为绿色" id="button1" />
+			<input type="button" value="背景颜色变为绿色内容字体变成红色" id="button2" />
+		</div>
+	</body>
+
+</html>

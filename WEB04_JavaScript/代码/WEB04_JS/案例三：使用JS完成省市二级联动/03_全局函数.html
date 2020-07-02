@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>全局函数</title>
+		<script>
+			var str = "张三";
+			//alert(encodeURI(str));//%E5%BC%A0%E4%B8%89
+			//alert(encodeURIComponent(str));//%E5%BC%A0%E4%B8%89
+			
+			//alert(decodeURI(encodeURI(str)));//张三
+			//alert(decodeURIComponent(encodeURIComponent(str)));//张三
+			
+			var str1 = "http://www.itheima.cn";
+			//alert(encodeURI(str1));//http://www.itheima.cn
+			//alert(encodeURIComponent(str1));//http%3A%2F%2Fwww.itheima.cn
+			
+			//alert(decodeURI(encodeURI(str1)));//http://www.itheima.cn
+			//alert(decodeURIComponent(encodeURIComponent(str1)));//http://www.itheima.cn
+			
+			var str2 = "alert('abc')";
+			//alert(str2);
+			eval(str2);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

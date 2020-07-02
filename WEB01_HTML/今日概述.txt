@@ -1,0 +1,97 @@
+案例一：网站信息显示页面
+1.什么是HTML？(Hyper Text Markup Language:超文本标记语言)
+	超文本：功能比普通文本更加强大
+	标记语言：使用一组标签对内容进行描述的一门语言(它不是编程语言)
+	
+2.为什么要学习HTML？
+	
+
+3.语法和规范？
+	HTML文件都是以.html或者.htm结尾的。建议使用.html结尾。
+	HTML文件分为头部分(<head></head>)和体部分(<body></body>)
+	HTML标签都是由开始标签和结束标签组成。(<hr />)
+	HTML标签不区分大小写，建议使用小写。
+
+4.HTML相关标签学习
+	标题标签<hn />
+	水平线标签 <hr />
+	段落标签<p></p>
+	字体标签<font></font>
+		属性：size:指定内容的大小
+			  color：指定内容的颜色
+			  face：指定内容的字体
+	加粗：<b></b>
+	斜体：<i></i>
+	下划线：<u></u>
+		
+
+5.步骤分析：
+	①创建一个html文件
+	②创建一个标题标签显示公司简介
+	③创建一条水平线标签
+	④创建四个段落标签
+
+案例二：网站图片显示页面
+1.图片标签
+	<img />
+	属性：
+		src:指的是图片显示的路径(位置)
+			绝对路径：E:\Users\ThinkPad\Desktop\0703JavaEE就业班\WEB01_HTML\资料\WEB01\image
+			相对路径：
+				①同一级：直接写文件名称或者./文件名称
+				②上一级：../文件名称
+				③下一级：写上目录名称/文件名称
+		width:指定图片的宽度，取值可以是像素值，也可以是百分比
+		height：指定图片的高度，取值可以是像素值，也可以是百分比
+		alt：当图片无法正常显示的时候给出的提示信息(该属性的显示效果与浏览器以及浏览器版本有关)
+			
+			
+案例三：网站友情链接显示页面
+	1.列表标签
+		有序列表：
+			<ol type="I" start="" reversed="reversed">
+				<li></li>
+			</ol>
+		无序列表：
+			<ul type="">
+				<li></li>
+			</ul>
+		
+	2.超链接标签
+		<a href="" target=""></a>
+		href:指定跳转的位置
+		target：指定跳转页面显示的位置(取值：_self 、_blank)
+
+案例四：网站首页显示页面
+	1.表格标签
+				<table border="" width="" height="" align="" bgcolor="" cellpadding="" cellspacing="">
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+				</table>
+	2.跨行跨列操作
+		跨行：rowspan
+		跨列：colspan
+		
+		
+案例五：网站后台系统页面
+	框架集标签：
+		<frameset rows="" cols="">
+			<frame src=""/>
+			<frame name=""/>
+		</frameset>
+
+
+
+
+
+
+

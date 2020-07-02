@@ -1,0 +1,75 @@
+分页操作：使用limit(参数1，参数2)
+	起始位置(参数1)=(第几页-1)*每页显示的条数(参数2)
+	
+1.分类表
+create table category(
+	cid varchar(32) primary key,
+	cname varchar(100)
+);
+
+2.商品表
+create table product(
+	pid varchar(32) primary key,
+	pname varchar(40),
+	price double,
+	category_id varchar(32)
+);
+
+alter table product add foreign key(category_id) references category(cid);
+
+
+3.添加外键列
+alter table product add category_id varchar(32);
+
+4.添加约束
+alter table product add constraint product_fk foreign key(category_id) references category(cid);
+
+5.订单表
+create table orders(
+	oid varchar(32) primary key,
+	totalprice double
+);
+
+6.订单项表
+create table orderitem(
+	oid varchar(50),
+	pid varchar(50)
+);
+
+7.联合主键
+alter table orderitem add primary key(oid,pid);
+
+8.订单表和订单项表的主外键关系
+alter table orderitem add constraint orderitem_orders_fk foreign key(oid) references orders(oid);
+
+9.商品表和订单项表的主外键关系
+alter table orderitem add constraint orderitem_product_fk foreign key(pid) references product(pid);
+
+
+
+insert into category(cid,cname) values('c001','家电');
+insert into category(cid,cname) values('c002','服饰');
+insert into category(cid,cname) values('c003','化妆品');
+
+insert into product(pid,pname,price,category_id) values('p001','联想','5000','c001');
+insert into product(pid,pname,price,category_id) values('p002','海尔','5000','c001');
+insert into product(pid,pname,price,category_id) values('p003','雷神','5000','c001');
+
+insert into product(pid,pname,price,category_id) values('p004','JACK JONES','800','c002');
+insert into product(pid,pname,price,category_id) values('p005','真维斯','200','c002');
+insert into product(pid,pname,price,category_id) values('p006','花花公子','440','c002');
+insert into product(pid,pname,price,category_id) values('p007','劲霸','2000','c002');
+
+insert into product(pid,pname,price,category_id) values('p008','香奈儿','800','c003');
+insert into product(pid,pname,price,category_id) values('p009','相宜本草','200','c003');
+
+
+
+声明外键约束
+1.从orderitem到product的关系
+alter table orderitem add foreign key(pid) references product(pid);
+
+2.从orderitem到orders的关系
+
+
+

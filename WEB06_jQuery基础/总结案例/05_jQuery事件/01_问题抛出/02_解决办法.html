@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>4-1-2</title>
+	</head>
+	<!--解决办法：
+		方式一：将JS代码移到需要操作的html代码后面，一般建议放到body的外面
+		方式二：将JS代码放到一个页面加载函数中去-->
+
+	<body>
+		<div id="panel">click me.</div>
+		<script type="text/javascript">
+				document.getElementById("panel").onclick = function() {
+					alert("元素已经加载完毕 !");
+				}
+				/*正确执行*/
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>使用jQuery完成省市二级联动</title>
+		<style type="text/css">
+			.top{
+				border: 1px solid red;
+				width: 32.9%;
+				height: 50px;
+				float: left;
+			}
+
+			#clear{
+				clear: both;
+			}
+			#menu{
+				border: 1px solid blue;
+				width: 99%;
+				height: 40px;
+				background-color: black;
+			}
+			#menu ul li{
+				display: inline;
+				color: white;
+				font-size: 19px;
+			}
+			#bottom{
+				text-align: center;
+			}
+			#contanier{
+				border: 1px solid red;
+				width: 99%;
+				height: 600px;
+				background: url(../img/regist_bg.jpg);
+				position: relative;
+			}
+			#content{
+				border: 5px solid gray;
+				width: 50%;
+				height: 60%;
+				position: absolute;
+				top: 100px;
+				left: 300px;
+				background-color: white;
+				padding-top: 50px;
+			}
+
+		</style>
+		<script type="text/javascript" src="../js/jquery-1.8.3.js" ></script>
+		<script>
+			$(function(){
+				//2.创建二维数组用于存储省份和城市
+				var cities = new Array(3);
+				cities[0] = new Array("武汉市","黄冈市","襄阳市","荆州市");
+				cities[1] = new Array("长沙市","郴州市","株洲市","岳阳市");
+				cities[2] = new Array("石家庄市","邯郸市","廊坊市","保定市");
+				cities[3] = new Array("郑州市","洛阳市","开封市","安阳市");
+				
+				$("#province").change(function(){
+					//10.清除第二个下拉列表的内容
+					$("#city").empty();
+					
+					//1.获取用户选择的省份
+					var val = this.value;
+					//alert(val);
+					//3.遍历二维数组中的省份
+					$.each(cities,function(i,n){
+						//alert(i+":"+n);
+						//4.判断用户选择的省份和遍历的省份
+						if(val==i){
+							//5.遍历该省份下的所有城市
+							$.each(cities[i], function(j,m) {
+								//alert(m);
+								//6.创建城市文本节点
+								var textNode = document.createTextNode(m);
+								//7.创建option元素节点
+								var opEle = document.createElement("option");
+								//8.将城市文本节点添加到option元素节点中去
+								$(opEle).append(textNode);
+								//9.将option元素节点追加到第二个下拉列表中去
+								$(opEle).appendTo($("#city"));
+							});
+						}
+					});
+					
+				});
+			});
+		</script>
+			
+	</head>
+	<body>
+		<div>
+			
+			<!--1.logo部分的div-->
+			<div>
+				<!--切分为3个小的div-->
+				<div class="top">
+					<img src="../img/logo2.png" height="47px"/>
+				</div>
+				<div class="top">
+					<img src="../img/header.png" height="47px"/>
+				</div>
+				<div class="top" style="padding-top: 15px;height: 35px;">
+					<a href="#">登录</a>
+					<a href="#">注册</a>
+					<a href="#">购物车</a>
+				</div>
+			</div>
+			<!--清除浮动-->
+			<div id="clear">
+				
+			</div>
+			<!--2.导航栏部分的div-->
+			<div id="menu">
+				<ul>
+					<li >首页</li>
+					<li >电脑办公</li>
+					<li >手机数码</li>
+					<li >孕婴保健</li>
+					<li >鞋靴箱包</li>
+				</ul>
+			</div>
+			<!--3.中间注册表单部分div-->
+			<div id="contanier">
+				<div id="content">
+					<table border="1" align="center" cellpadding="0" cellspacing="0" width="70%" height="70%" bgcolor="white">
+						<form method="get" action="#" onsubmit="return checkForm()">
+						<tr>
+							<td colspan="2" align="center">
+								<font size="5">会员注册</font>
+							</td>
+							
+						</tr>
+						<tr>
+							<td>
+								用户名
+							</td>
+							<td>
+								<input type="text" name="username" id="username" onfocus="showTips('username','必须以字母开头')" onblur="check('username','用户名不能为空')" /><span id="usernamespan"></span>
+							</td>
+						</tr>
+						<tr>
+							<td>密码</td>
+							<td>
+								<input type="password" name="password" id="password" onfocus="showTips('password','密码长度不能低于6位！')" onblur="check('password','密码不能为空！')" /><span id="passwordspan"></span>
+							</td>
+						</tr>
+						<tr>
+							<td>确认密码</td>
+							<td>
+								<input type="password" name="repassword" />
+							</td>
+						</tr>
+						<tr>
+							<td>email</td>
+							<td>
+								<input type="text" name="email" id="email" />
+							</td>
+						</tr>
+						<tr>
+							<td>姓名</td>
+							<td>
+								<input type="text" name="name" />
+							</td>
+						</tr>
+						<!--1.编写HTML文件部分的内容-->
+						<tr>
+							<td>籍贯</td>
+							<td>
+								<!--2.确定事件，通过函数传参的方式拿到改变后的城市-->
+								<select id="province">
+									<option>--请选择--</option>
+									<option value="0">湖北</option>
+									<option value="1">湖南</option>
+									<option value="2">河北</option>
+									<option value="3">河南</option>
+								</select>
+								<select id="city">
+									
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>性别</td>
+							<td>
+								<input type="radio" name="sex" value="男"/>男
+								<input type="radio" name="sex" value="女"/>女
+							</td>
+						</tr>
+						<tr>
+							<td>出生日期</td>
+							<td>
+								<input type="text" name="birthday" />
+							</td>
+						</tr>
+						<tr>
+							<td>验证码</td>
+							<td>
+								<input type="text" name="yanzhengma" />
+								<img src="../img/yanzhengma.png" />
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<input type="submit" value="注册" />											
+							</td>
+						</tr>
+						</form>
+					</table>
+				</div>
+			</div>
+			<!--4.广告图片的div-->
+			<div id="">
+				<img src="../img/footer.jpg" width="99%" />
+			</div>
+			<!--5.超链接与版权信息的div-->
+			<div id="bottom">
+				<a href="#">关于我们 </a>
+				<a href="#">联系我们 </a>
+				<a href="#">招贤纳士 </a>
+				<a href="#">法律声明</a>
+				<a href="#">友情链接</a>
+				<a href="#">支付方式</a>
+				<a href="#">配送方式 </a>
+				<a href="#">服务声明 </a>
+				<a href="#">广告声明 </a>
+				<p>Copyright © 2005-2016 传智商城 版权所有 </p>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,20 @@
+方法一:
+ 在my.ini的[mysqld]字段加入：
+skip-grant-tables
+重启mysql服务，这时的mysql不需要密码即可登录数据库
+ 然后进入mysql
+mysql>use mysql;
+ mysql>更新 user set password=password('新密码') WHERE User='root';
+mysql>flush privileges;
+ 运行之后最后去掉my.ini中的skip-grant-tables，重启mysqld即可。
+ 
+
+方法二:
+ 不使用修改my.ini重启服务的方法，通过非服务方式加skip-grant-tables运行mysql来修改mysql密码
+ 停止mysql服务
+ 打开命令行窗口，在bin目录下使用mysqld-nt.exe启动，即在命令行窗口执行: mysqld-nt --skip-grant-tables
+ 然后另外打开一个命令行窗口，登录mysql，此时无需输入mysql密码即可进入。
+ 按以上方法修改好密码后,关闭命令行运行mysql的那个窗口，此时即关闭了mysql，如果发现mysql仍在运行
+
+的话可以结束掉对应进程来关闭。
+ 启动mysql服务

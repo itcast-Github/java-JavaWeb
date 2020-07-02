@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JQ的获取</title>
+		<script type="text/javascript" src="../../js/jquery-1.8.3.js" ></script>
+		<script>
+			$(function(){
+				//1.JS方式获取
+				/*document.getElementById("btn").onclick= function(){
+					location.href="惊喜.html";
+				}*/
+				
+				//2.JQ方式获取=====>>>$("#btn")
+				$("#btn").click(function(){
+					location.href="惊喜.html"
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<input type="button" value="点我有惊喜" id="btn"/>
+	</body>
+</html>

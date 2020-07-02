@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格隔行换色</title>
+		<script>
+			function changeColor(id,flag){
+				if(flag=="over"){
+					document.getElementById(id).style.backgroundColor="red";
+				}else if(flag=="out"){
+					document.getElementById(id).style.backgroundColor="white";
+				}
+			}
+		</script>
+
+	</head>
+	<body>
+		<table border="1" width="500" height="50" align="center">
+			<thead>
+				<tr>
+					<th>编号</th>
+					<th>姓名</th>
+					<th>年龄</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr onmouseover="changeColor('tr1','over')" id="tr1" onmouseout="changeColor('tr1','out')">
+					<td>1</td>
+					<td>张三</td>
+					<td>22</td>
+				</tr>
+				<tr onmouseover="changeColor('tr2','over')" id="tr2" onmouseout="changeColor('tr2','out')">
+					<td>2</td>
+					<td>李四</td>
+					<td>25</td>
+				</tr>
+				<tr onmouseover="changeColor('tr3','over')" id="tr3" onmouseout="changeColor('tr3','out')">
+					<td>3</td>
+					<td>王五</td>
+					<td>27</td>
+				</tr>
+				<tr onmouseover="changeColor('tr4','over')" id="tr4" onmouseout="changeColor('tr4','out')">
+					<td>4</td>
+					<td>赵六</td>
+					<td>29</td>
+				</tr>
+				<tr onmouseover="changeColor('tr5','over')" id="tr5" onmouseout="changeColor('tr5','out')">
+					<td>5</td>
+					<td>田七</td>
+					<td>30</td>
+				</tr>
+				<tr onmouseover="changeColor('tr6','over')" id="tr6" onmouseout="changeColor('tr6','out')">
+					<td>6</td>
+					<td>汾九</td>
+					<td>20</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

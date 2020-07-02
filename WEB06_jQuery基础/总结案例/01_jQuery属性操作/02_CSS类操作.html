@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>属性操作_CSS类</title>
+		<style type="text/css">
+			.divclass {
+				color: red;
+			}
+			
+			.div1 {
+				background-color: yellow;
+			}
+			
+			#div1 {
+				border: 1px solid black;
+				width: 400px;
+				height: 250px;
+				margin: auto;
+			}
+			
+			#father {
+				border: 1px solid white;
+				width: 450px;
+				height: 300px;
+				margin: auto;
+				text-align: center;
+			}
+		</style>
+		<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+		<script>
+			/**
+			 * 需求：
+			 * 1.点击button，使一个div的背景颜色变为 黄色
+			 * 2.点击button，清空之前设置的背景颜色
+			 * 3.通过toggleClass(class) 实现点击字体变为紅色，再点击样式还原
+			 */
+
+			/**
+			 * 方法分析：
+			 *  1.addClass(class) 添加一个class属性
+			 *  2.removeClass([class]) 移除一个class属性
+			 *  3.toggleClass(class) 如果存在(不存在)就删除(添加)一个类
+			 */
+
+			/**
+			 *代码实现 
+			 */
+			$(function() {
+				// 1.点击button，使一个div的背景颜色变为黄色
+				$("#button1").click(function() {
+					$("#div1").addClass("div1");
+				});
+
+				// 2.点击button，清空之前设置的背景颜色
+				$("#button2").click(function() {
+					$("#div1").removeClass("div1");
+				});
+
+				// 3.通过toggleClass(class) 实现点击字体变为紅色，再点击样式还原
+				$("#button3").click(function() {
+					$("#div1").toggleClass("divclass");
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="father">
+			<div id="div1">AAAAAA</div><br />
+			<input type="button" value="背景颜色变为黄色" id="button1" />
+			<input type="button" value="背景颜色清空" id="button2" />
+			<input type="button" value="字体颜色开关" id="button3" />
+		</div>
+	</body>
+
+</html>

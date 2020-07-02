@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>文档处理_删除操作</title>
+		<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript">
+			/**
+			 * 需求
+			 * 	分别使用detach和remove 删除带有click事件的p标签，删除后再将p 重新加入body 查看事件是否存在
+			 */
+			
+			/**
+			 * 方法分析
+			 * 	1.remove()：删除节点后，事件也会删除
+			 *  2.detach()：删除节点后，事件会保留 从1.4新API 
+			 *  3.empty():清空元素中的所有后代节点。(这个案例是要删除而不是清空，需要注意)
+			 */
+			
+			/**
+			 * 代码实现 
+			 */
+			$(function() {
+				$("p").click(function() {
+					alert($(this).text());
+				});
+				// 使用remove方法删除 p元素，连同事件一起删除
+				//var $p = $("p").remove();
+				// 使用detach删除，事件会保留
+				var $p = $("p").detach();
+
+				$("div").append($p);
+			});
+		</script>
+
+	</head>
+
+	<body>
+		<p>AAA</p>
+		
+		<div>BBB</div>
+	</body>
+
+</html>
