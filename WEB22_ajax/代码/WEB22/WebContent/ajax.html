@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+	function fn1(){
+		//1、创建ajax引擎对象 ---- 所有的操作都是通过引擎对象
+		var xmlHttp = new XMLHttpRequest();
+		//2、绑定监听 ---- 监听服务器是否已经返回相应数据
+		xmlHttp.onreadystatechange = function(){
+			if(xmlHttp.readyState==4&&xmlHttp.status==200){
+				//5、接受相应数据
+				var res = xmlHttp.responseText;
+				document.getElementById("span1").innerHTML = res;
+			}
+		}
+		//3、绑定地址
+		xmlHttp.open("GET","/WEB22/ajaxServlet?name=lisi",true);
+		//4、发送请求
+		xmlHttp.send();
+		
+	}
+	function fn2(){
+		//1、创建ajax引擎对象 ---- 所有的操作都是通过引擎对象
+		var xmlHttp = new XMLHttpRequest();
+		//2、绑定监听 ---- 监听服务器是否已经返回相应数据
+		xmlHttp.onreadystatechange = function(){
+			if(xmlHttp.readyState==4&&xmlHttp.status==200){
+				//5、接受相应数据
+				var res = xmlHttp.responseText;
+				document.getElementById("span2").innerHTML = res;
+			}
+		}
+		//3、绑定地址
+		xmlHttp.open("POST","/WEB22/ajaxServlet",false);
+		//4、发送请求
+		xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		xmlHttp.send("name=wangwu");
+		
+	}
+
+	
+</script>
+
+</head>
+<body>
+	<input type="button" value="异步访问服务器端" onclick="fn1()"><span id="span1"></span>
+	<br>
+	<input type="button" value="同步访问服务器端" onclick="fn2()"><span id="span2"></span>
+	<br>
+	<input type="button" value="测试按钮" onclick="alert()">
+</body>
+</html>

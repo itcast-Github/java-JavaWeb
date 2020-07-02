@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>insertBefore.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+  </head>
+  <body>
+       <ul>
+		 <li id="bj" name="beijing">北京</li>
+	   </ul>
+  </body>
+  
+  <script language="JavaScript">
+   /**
+	 * 案例四
+	 * {
+	 *   "param1":[{key:value,key:value},{key:value,key:value}],
+	 *   "param2":[{key:value,key:value},{key:value,key:value}],
+	 *   "param3":[{key:value,key:value},{key:value,key:value}]
+	 * }
+	 *  
+	 *  
+	 */
+	 var json = {
+		 			"baobao":[
+			 		          	{"name":"小双","age":28,"addr":"扬州"},
+			 		          	{"name":"建宁","age":18,"addr":"紫禁城"},
+			 		          	{"name":"阿珂","age":10,"addr":"山西"},
+		 		          	],
+		 		     "haohao":[
+			 		          	{"name":"张爽","age":25,"addr":"吉林"},
+			 		          	{"name":"舒洁","age":23,"addr":"赤峰"}
+				 		      ]
+		 		};
+	 
+	alert(json.haohao[1].name);
+	 
+
+  </script>
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>WEB23</display-name>
+  
+  <listener>
+  	<listener-class>com.itheima.birthday.BirthdayListener</listener-class>
+  </listener>
+  
+  
+  
+  <!-- <listener>
+    <listener-class>com.itheima.attribute.MyServletContextAttributeListener</listener-class>
+  </listener> -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>TestMyServletContextAttributeListener</display-name>
+    <servlet-name>TestMyServletContextAttributeListener</servlet-name>
+    <servlet-class>com.itheima.attribute.TestMyServletContextAttributeListener</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestMyServletContextAttributeListener</servlet-name>
+    <url-pattern>/test1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TestPersonBindingServlet</display-name>
+    <servlet-name>TestPersonBindingServlet</servlet-name>
+    <servlet-class>com.itheima.domian.TestPersonBindingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestPersonBindingServlet</servlet-name>
+    <url-pattern>/testBinding</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TestCustomerActiveServlet</display-name>
+    <servlet-name>TestCustomerActiveServlet</servlet-name>
+    <servlet-class>com.itheima.domian.TestCustomerActiveServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestCustomerActiveServlet</servlet-name>
+    <url-pattern>/testActive</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TestCustomerActiveServlet2</display-name>
+    <servlet-name>TestCustomerActiveServlet2</servlet-name>
+    <servlet-class>com.itheima.domian.TestCustomerActiveServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestCustomerActiveServlet2</servlet-name>
+    <url-pattern>/testActive2</url-pattern>
+  </servlet-mapping>
+</web-app>
